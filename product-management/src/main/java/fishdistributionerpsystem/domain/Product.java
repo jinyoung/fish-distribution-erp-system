@@ -19,6 +19,8 @@ public class Product {
 
     private String productName;
 
+    private String description;
+
     @PostPersist
     public void onPostPersist() {
         ProductRegistered productRegistered = new ProductRegistered(this);

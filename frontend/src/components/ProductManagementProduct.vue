@@ -18,6 +18,7 @@
         <v-card-text>
             <String v-if="editMode" label="Product ID" v-model="value.productId" :editMode="editMode" :inputUI="''"/>
             <String label="Product Name" v-model="value.productName" :editMode="editMode" :inputUI="''"/>
+            <String label="Description" v-model="value.description" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>

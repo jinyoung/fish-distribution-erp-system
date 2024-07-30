@@ -11,6 +11,9 @@
             <div>
                 <String label="ProductName" v-model="item.productName" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <String label="Description" v-model="item.description" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>

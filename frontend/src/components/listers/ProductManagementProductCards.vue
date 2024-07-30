@@ -111,6 +111,7 @@
             me.newValue = {
                 'productId': '',
                 'productName': '',
+                'description': '',
             }
         },
         methods:{
