@@ -1,0 +1,84 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+#<<< API Gateway / Routes
+      routes:
+        - id: supply-chain-management
+          uri: http://localhost:8082
+          predicates:
+            - Path=/supplierRegistrations/**, /fishPurchasePlans/**, /fishOrders/**, /stocks/**, 
+        - id: production-management
+          uri: http://localhost:8083
+          predicates:
+            - Path=/harvestInformations/**, /fishProductionPlans/**, /fishProductionStatuses/**, 
+        - id: product-management
+          uri: http://localhost:8084
+          predicates:
+            - Path=/products/**, /productOrders/**, /productSales/**, 
+        - id: financial-management
+          uri: http://localhost:8085
+          predicates:
+            - Path=/payments/**, /accountings/**, 
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+#>>> API Gateway / Routes
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: supply-chain-management
+          uri: http://supplyChainManagement:8080
+          predicates:
+            - Path=/supplierRegistrations/**, /fishPurchasePlans/**, /fishOrders/**, /stocks/**, 
+        - id: production-management
+          uri: http://productionManagement:8080
+          predicates:
+            - Path=/harvestInformations/**, /fishProductionPlans/**, /fishProductionStatuses/**, 
+        - id: product-management
+          uri: http://productManagement:8080
+          predicates:
+            - Path=/products/**, /productOrders/**, /productSales/**, 
+        - id: financial-management
+          uri: http://financialManagement:8080
+          predicates:
+            - Path=/payments/**, /accountings/**, 
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080

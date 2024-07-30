@@ -1,0 +1,12 @@
+package fishdistributionerpsystem.domain;
+
+import java.time.LocalDate;
+import java.util.*;
+import lombok.Data;
+
+@Data
+public class RegisterSupplierCommand {
+
+    private String supplierId;
+    private String supplierName;
+}
