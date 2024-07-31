@@ -20,6 +20,7 @@
             <String label="Product ID" v-model="value.productId" :editMode="editMode" :inputUI="''"/>
             <Number label="Quantity" v-model="value.quantity" :editMode="editMode" :inputUI="''"/>
             <String label="Order Status" v-model="value.orderStatus" :editMode="editMode" :inputUI="''"/>
+            <ProductId offline label="ProductId" v-model="value.productId" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>

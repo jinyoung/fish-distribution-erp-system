@@ -70,6 +70,7 @@
                     { text: "productId", value: "productId" },
                     { text: "quantity", value: "quantity" },
                     { text: "orderStatus", value: "orderStatus" },
+                    { text: "productId", value: "productId" },
                 ],
             productOrder : [],
             newValue: {},
@@ -91,6 +92,7 @@
                 'productId': '',
                 'quantity': 0,
                 'orderStatus': '',
+                'productId': {},
             }
         },
         methods: {

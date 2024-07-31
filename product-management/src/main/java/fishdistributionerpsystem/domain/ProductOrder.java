@@ -23,6 +23,9 @@ public class ProductOrder {
 
     private String orderStatus;
 
+    @Embedded
+    private ProductId productId;
+
     @PostPersist
     public void onPostPersist() {
         ProductOrdered productOrdered = new ProductOrdered(this);

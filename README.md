@@ -49,7 +49,7 @@ mvn spring-boot:run
 - product-management
 ```
  http :8088/products productId="productId" productName="productName" description="description" 
- http :8088/productOrders orderId="orderId" productId="productId" quantity="quantity" orderStatus="orderStatus" 
+ http :8088/productOrders orderId="orderId" productId="productId" quantity="quantity" orderStatus="orderStatus" productId="productId" 
  http :8088/productSales saleId="saleId" productId="productId" quantity="quantity" 
 ```
 - financial-management

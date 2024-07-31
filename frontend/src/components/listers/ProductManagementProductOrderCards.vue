@@ -113,6 +113,7 @@
                 'productId': '',
                 'quantity': 0,
                 'orderStatus': '',
+                'productId': {},
             }
         },
         methods:{

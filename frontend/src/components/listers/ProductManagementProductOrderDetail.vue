@@ -17,6 +17,7 @@
             <div>
                 <String label="OrderStatus" v-model="item.orderStatus" :editMode="editMode" @change="change" />
             </div>
+            <ProductId offline label="ProductId" v-model="item.productId" :editMode="false" :key="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>
